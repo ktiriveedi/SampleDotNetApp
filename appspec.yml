@@ -1,0 +1,10 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::EC2::Instance
+      Properties:
+        LogicalName: MyEC2Instance
+        Name: WindowsEC2Instance
+        ScriptPath: scripts/deploy.ps1
+        TimeoutInSeconds: 3600
+
