@@ -4,11 +4,3 @@ hooks:
   BeforeInstall:
     - location: scripts/stop.ps1
       timeout: 200
-files:
-  - source: publish_output/
-    destination: C:\inetpub\wwwroot
-
-hooks:
-  AfterInstall:
-    - location: scripts/start.ps1
-      timeout: 200
