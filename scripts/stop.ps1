@@ -14,8 +14,8 @@ $sourceDirectory = "$env:CODEBUILD_SRC_DIR\\publish_output"
 $destinationDirectory = "C:\\inetpub\\wwwroot"
 
 # Copy files from source to destination
-Copy-Item -Path $sourceDirectory\\* -Destination $destinationDirectory -Recurse -Force
+#Copy-Item -Path $sourceDirectory\\* -Destination $destinationDirectory -Recurse -Force
 
 
 # Start the service
-Start-Service -Name w3svc
+#Start-Service -Name w3svc
