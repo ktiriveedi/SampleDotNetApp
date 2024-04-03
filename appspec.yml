@@ -1,10 +1,14 @@
 version: 0.0
 os: windows
+hooks:
+  BeforeInstall:
+    - location: scripts/stop.ps1
+      timeout: 200
 files:
   - source: publish_output/
     destination: C:\inetpub\wwwroot
-hooks:
-  ApplicationStop:
-    - location: scripts/deploy.ps1
-      timeout: 200
 
+hooks:
+  BeforeInstall:
+    - location: scripts/start.ps1
+      timeout: 200
