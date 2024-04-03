@@ -9,6 +9,6 @@ files:
     destination: C:\inetpub\wwwroot
 
 hooks:
-  BeforeInstall:
+  AfterInstall:
     - location: scripts/start.ps1
       timeout: 200
