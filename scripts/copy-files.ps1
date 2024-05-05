@@ -2,14 +2,14 @@ Write-Host "Root path Directory of the scritp: $PSScriptRoot"
 $deploymentDir = Split-Path -Parent $PSScriptRoot
 Write-Host "Deployment Directory: $deploymentDir"
 
-$sourceDir = Join-Path -Path $deploymentDir "
-Write-Host "Source Directory: $sourceDir"
+#$sourceDir = Join-Path -Path $deploymentDir "
+#Write-Host "Source Directory: $sourceDir"
 
 $destinationDir = "C:\liquibase"
 Write-Host "Destination Directory: $destinationDir"
 
 # Path to the specific file in the deployment directory
-$sourceFile = Join-Path -Path $sourceDir -ChildPath "liquibase.properties"
+$sourceFile = Join-Path -Path $deploymentDir -ChildPath "liquibase.properties"
 Write-Host "Source File: $sourceFile"
 
 # Path to the specific location where the file will be copied
