@@ -10,6 +10,7 @@ phases:
       - dotnet build
       - dotnet publish -c Release -o C:\codebuild\artifacts\publish_output
       - 'md C:\codebuild\artifacts\publish_output\scripts'
+      - 'md C:\codebuild\artifacts\publish_output\db
       - 'copy .\appspec.yml C:\codebuild\artifacts\publish_output'
       - 'copy .\liquibase.properties C:\codebuild\artifacts\publish_output'
       - 'PowerShell -Command "Copy-Item -Path .\scripts\* -Destination C:\codebuild\artifacts\publish_output\scripts -Recurse -Force"'
