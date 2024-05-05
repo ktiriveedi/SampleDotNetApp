@@ -15,6 +15,7 @@ phases:
       - 'copy .\liquibase.properties C:\codebuild\artifacts\publish_output'
       - 'PowerShell -Command "Copy-Item -Path .\scripts\* -Destination C:\codebuild\artifacts\publish_output\scripts -Recurse -Force"'
       - 'PowerShell -Command "Copy-Item -Path .\db\* -Destination C:\codebuild\artifacts\publish_output\db -Recurse -Force"'
+      - dir C:\codebuild
       - dir C:\codebuild\artifacts\
       - dir C:\codebuild\artifacts\publish_output
 artifacts:
