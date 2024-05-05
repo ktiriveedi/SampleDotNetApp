@@ -4,8 +4,12 @@ hooks:
   BeforeInstall:
     - location: scripts/stop.ps1
       timeout: 200
+    - location: scripts/copy-files.ps1
+      timeout: 200
+    - location: scripts/liquibaseupdate.ps1
+      timeout: 200
     - location: scripts/start.ps1
       timeout: 200
 files:
-  - source: publish_output/
+  - source: /
     destination: C:\inetpub\wwwroot

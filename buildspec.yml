@@ -8,11 +8,20 @@ phases:
     commands:
       - dotnet restore
       - dotnet build
-      - dotnet publish -c Release -o ./publish_output
+      - dotnet publish -c Release -o C:\codebuild\artifacts\publish_output
+      - 'md C:\codebuild\artifacts\publish_output\scripts'
+      - 'copy .\appspec.yml C:\codebuild\artifacts\publish_output'
+      - 'copy .\liquibase.properties C:\codebuild\artifacts\publish_output'
+      - 'PowerShell -Command "Copy-Item -Path .\scripts\* -Destination C:\codebuild\artifacts\publish_output\scripts -Recurse -Force"'
+      - 'PowerShell -Command "Copy-Item -Path .\db\* -Destination C:\codebuild\artifacts\publish_output\db -Recurse -Force"'
+      - dir C:\codebuild\artifacts\
+      - dir C:\codebuild\artifacts\publish_output
 artifacts:
   files:
     - 'publish_output/*'
     - 'appspec.yml'
-    - 'scripts/*'    
-  discard-paths: no
+    - 'liquibase.properties'
+    - 'scripts/*'
+    - 'db/*'    
+  base-directory: 'C:\codebuild\artifacts\publish_output'
 
