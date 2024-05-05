@@ -13,3 +13,5 @@ hooks:
 files:
   - source: /
     destination: C:\inetpub\wwwroot
+  - source: ./liquibase.properties
+    deatination: c:\liquibase
