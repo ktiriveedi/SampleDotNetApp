@@ -2,7 +2,7 @@ Write-Host "Root path Directory of the scritp: $PSScriptRoot"
 $deploymentDir = Split-Path -Parent $PSScriptRoot
 Write-Host "Deployment Directory: $deploymentDir"
 
-$sourceDir = Join-Path -Path $deploymentDir -ChildPath "publish_output"
+$sourceDir = Join-Path -Path $deploymentDir "
 Write-Host "Source Directory: $sourceDir"
 
 $destinationDir = "C:\liquibase"
