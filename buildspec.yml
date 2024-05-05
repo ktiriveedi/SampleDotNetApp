@@ -20,10 +20,10 @@ phases:
       - dir C:\codebuild\artifacts\publish_output
 artifacts:
   files:
-    - 'publish_output/*'
+    - 'publish_output\**\*'
     - 'appspec.yml'
     - 'liquibase.properties'
     - 'scripts/*'
-    - 'db/*'    
+    - 'db\**\*'
   base-directory: 'C:\codebuild\artifacts\publish_output'
 
